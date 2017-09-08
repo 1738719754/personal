@@ -2,11 +2,10 @@ package com.youmel.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-/**
- * Created by CDDF on 2017/9/8.
- */
+@EnableDiscoveryClient
 @EnableConfigServer
 @SpringBootApplication
 public class Application {
