@@ -15,6 +15,7 @@
         <module>article</module>
         <module>eureka</module>
         <module>eureka2</module>
+        <module>usercopy</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
