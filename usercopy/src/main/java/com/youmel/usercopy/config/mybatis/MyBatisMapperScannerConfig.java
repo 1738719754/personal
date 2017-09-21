@@ -1,4 +1,4 @@
-package user.config.mybatis;
+package com.youmel.usercopy.config.mybatis;
 
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;

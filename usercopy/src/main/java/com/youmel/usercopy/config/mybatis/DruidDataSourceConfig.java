@@ -1,4 +1,4 @@
-package user.config.mybatis;
+package com.youmel.usercopy.config.mybatis;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.boot.bind.RelaxedPropertyResolver;

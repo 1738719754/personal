@@ -3,7 +3,7 @@
 // (powered by Fernflower decompiler)
 //
 
-package user.config.redis;
+package com.youmel.usercopy.config.redis;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
