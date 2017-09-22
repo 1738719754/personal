@@ -12,6 +12,7 @@ config:7001 user:7002 usercopy:7003 article:7004 zuul:5555 eureka:1111 eureka2:1
 
 2017/9/19：搭建bus消息总线
 
-2017/9/21：加入ribbon 
+2017/9/21：加入ribbon 使用feign替换ribbon
 
-2017/9/21：使用feign替换ribbon
+2017/9/22：feign ribbon配置、feign hystrix配置
+
