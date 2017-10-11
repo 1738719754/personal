@@ -14,5 +14,11 @@ config:7001 user:7002 usercopy:7003 article:7004 zuul:5555 eureka:1111 eureka2:1
 
 2017/9/21：加入ribbon 使用feign替换ribbon
 
-2017/9/22：feign ribbon配置、feign hystrix配置
+2017/9/22：feign ribbon配置、feign hystrix配置、logback
+
+2017/10/10：mvc相关复习，ServerPropertiesAutoConfiguration/HttpEncodingAutoConfiguration/MultipartAutoConfiguration/
+JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源映射/servlet/filter/listener
+
+2017/10/11：集成rabbitmq 暂未测试ack nack 回调 重试 延时等机制
+
 
