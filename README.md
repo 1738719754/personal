@@ -19,6 +19,8 @@ config:7001 user:7002 usercopy:7003 article:7004 zuul:5555 eureka:1111 eureka2:1
 2017/10/10：mvc相关复习，ServerPropertiesAutoConfiguration/HttpEncodingAutoConfiguration/MultipartAutoConfiguration/
 JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源映射/servlet/filter/listener
 
-2017/10/11：集成rabbitmq 暂未测试ack nack 回调 重试 延时等机制
+2017/10/11：集成rabbitmq
 
+2017/10/13：详细阅读rabbitmq文档:http://www.blogjava.net/qbna350816/archive/2016/08/13/431563.html。验证通过：基本发送、ack/nack、publisher-confirms、publisher-returns、sendTo、延时发送
 
+2017/10/17：集成redis、理解序列化、集成两个库
