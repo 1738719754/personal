@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by CDDF on 2017/10/17.
  */
 @Controller
+@RequestMapping("/redis")
 public class RedisController {
     @Autowired
     StringRedisTemplate stringRedisTemplate;

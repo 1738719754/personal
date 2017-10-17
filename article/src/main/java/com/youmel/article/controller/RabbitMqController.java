@@ -20,11 +20,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by CDDF on 2017/10/11.
  */
 @Controller
+@RequestMapping("/mq")
 public class RabbitMqController {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    @RequestMapping("set")
+    @RequestMapping("/set")
     @ResponseBody
     public void set(){
         rabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
@@ -44,7 +45,7 @@ public class RabbitMqController {
             }
         });
     }
-    @RequestMapping("send")
+    @RequestMapping("/send")
     @ResponseBody
     public void send(String message){
         rabbitTemplate.convertAndSend(MqConfig.EXCHANGE,MqConfig.ROUTINGKEY,message);

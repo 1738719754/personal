@@ -23,4 +23,4 @@ JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源�
 
 2017/10/13：详细阅读rabbitmq文档:http://www.blogjava.net/qbna350816/archive/2016/08/13/431563.html。验证通过：基本发送、ack/nack、publisher-confirms、publisher-returns、sendTo、延时发送
 
-2017/10/17：集成redis、理解序列化、集成两个库
+2017/10/17：集成redis、理解序列化、集成两个库、集成redis cache并理解@cacheable/@cacheput/@cacheEvict
