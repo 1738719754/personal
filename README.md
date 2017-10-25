@@ -1,6 +1,6 @@
 # personal
 用于Spring Cloud、Spring Boot的学习/复习。
-config:7001 user:7002 usercopy:7003 article:7004 zuul:5555 eureka:1111 eureka2:1112
+user:7002 usercopy:7003 article:7004 auth:7005 zuul:5555 eureka:1111 eureka2:1112 config:7001
 
 2017/9/6：搭建eureka注册中心
 
@@ -24,3 +24,7 @@ JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源�
 2017/10/13：详细阅读rabbitmq文档:http://www.blogjava.net/qbna350816/archive/2016/08/13/431563.html。验证通过：基本发送、ack/nack、publisher-confirms、publisher-returns、sendTo、延时发送
 
 2017/10/17：集成redis、理解序列化、集成两个库、集成redis cache并理解@cacheable/@cacheput/@cacheEvict
+
+2017/10/23：初步集成oauth2 准备开始做权限认证中心
+
+2017/10/25：弃用oauth2准备使用jwt加filter实现权限认证  初步集成jwt
