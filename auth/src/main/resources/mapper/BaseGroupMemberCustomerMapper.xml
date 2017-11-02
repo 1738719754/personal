@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youmel.auth.mapper.BaseGroupMemberCustomerMapper">
+
+    <select id="selectGroupByUserId" parameterType="java.lang.Integer" resultType="com.auth.manager.bus.common.vo.GroupAndMember">
+      SELECT
+        a.id as id,
+        a.g_name as gName,
+        a.g_description as gDescription,
+        b.m_type as mType
+      FROM
+        base_group a left join base_group_member b on a.id = b.group_id
+      WHERE
+        b.user_id = #{id}
+    </select>
+    <select id="selectMemberByGroupId" parameterType="java.lang.Integer" resultType="com.youmel.auth.pojo.BaseGroupMember">
+      SELECT
+        id as id,
+        group_id as groupId,
+        user_id as userId,
+        m_description as mDescription,
+        m_type as mType
+      FROM
+        base_group_member
+      WHERE
+        group_id = #{groupId}
+    </select>
+    <update id="updateGroupMember" parameterType="com.youmel.auth.pojo.BaseGroupMember">
+      UPDATE
+          base_group_member
+      <set>
+        <if test="mDescription != null and mDescription != ''">
+          m_description = #{mDescription},
+        </if>
+        <if test="mType != null">
+          m_type = #{mType},
+        </if>
+      </set>
+      WHERE
+        id = #{id}
+    </update>
+
+</mapper>

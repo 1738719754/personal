@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youmel.auth.mapper.BaseGroupCustomerMapper">
+
+
+    <select id="selectGroupByNameOrTypeId" parameterType="java.util.HashMap" resultType="com.youmel.auth.pojo.BaseGroup">
+      SELECT
+        id as id,
+        g_name as gName,
+        g_description as gDescription,
+        g_status as gStatus,
+        upd_time as updTime
+      FROM
+        base_group
+      WHERE
+        1 = 1
+        <if test="typeId != null">
+            and type_id = #{typeId}
+        </if>
+        <if test="name != null and name != '' ">
+            and g_name like concat('%',#{name},'%')
+        </if>
+    </select>
+</mapper>

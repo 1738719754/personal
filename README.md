@@ -28,3 +28,9 @@ JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源�
 2017/10/23：初步集成oauth2 准备开始做权限认证中心
 
 2017/10/25：弃用oauth2准备使用jwt加filter实现权限认证  初步集成jwt
+
+2017/10/30：学习使用tk.mybatis.mapper简化mapper
+
+2017/11/2：移除tk.mybatis.mapper不怎么试用 使用generator 开始写权限管理业务 初步完成角色接口
+
+2017/11/3：
