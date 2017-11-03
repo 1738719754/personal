@@ -2,13 +2,16 @@ package com.youmel.auth.controller;
 
 
 import com.youmel.auth.common.constant.StaticValue;
-import com.youmel.auth.common.util.EntityUtils;
+import com.youmel.auth.common.util.EntityUtil;
 import com.youmel.auth.common.util.MessageRsp;
 import com.youmel.auth.pojo.BaseGroupType;
 import com.youmel.auth.service.GroupTypeService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("groupType")
+@Api(description = "角色类型管理")
 public class GroupTypeController{
 
     @Autowired
@@ -26,6 +30,10 @@ public class GroupTypeController{
      * 可全部查询 也可 按条件查询
      */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
+    @ApiOperation(value = "按名称筛选 查询所有角色类型",notes = "可全部查询 也可 按条件查询")
+    @ApiImplicitParams( value = {
+            @ApiImplicitParam(paramType = "query", name = "name", dataType = "string", required = false, value = "角色类型名称")
+    })
     public MessageRsp all(@RequestParam(value = "name",required = false) String name) {
         MessageRsp messageRsp = new MessageRsp();
         messageRsp.setErrormsg(StaticValue.MSGERROR);
@@ -41,12 +49,17 @@ public class GroupTypeController{
      * 删除状态的字段  无状态改变
      */
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @ApiOperation(value = "编辑角色类型信息",notes = "删除了状态的字段  无状态改变")
+    @ApiImplicitParams( value = {
+            @ApiImplicitParam(paramType = "query", name = "baseGroupType", dataType = "BaseGroupType", required = true, value = "角色类型"),
+            @ApiImplicitParam(paramType = "path", name = "id", dataType = "int", required = true, value = "角色类型id")
+    })
     public MessageRsp put(BaseGroupType baseGroupType, @PathVariable Integer id) {
         MessageRsp messageRsp = new MessageRsp();
         messageRsp.setErrormsg(StaticValue.MSGERROR);
         messageRsp.setErrorcode(StaticValue.ERROR);
         //这里拼装basegroupType
-        EntityUtils.setCreatAndUpdatInfo(baseGroupType);
+        EntityUtil.setCreatAndUpdatInfo(baseGroupType);
         //判断参数
         if(id == null){
             messageRsp.setErrormsg("id is null");
@@ -64,12 +77,16 @@ public class GroupTypeController{
      * 新增角色类型
      */
     @RequestMapping(value = "",method = RequestMethod.POST)
+    @ApiOperation(value = "新增角色类型",notes = "新增角色类型")
+    @ApiImplicitParams( value = {
+            @ApiImplicitParam(paramType = "query", name = "baseGroupType", dataType = "BaseGroupType", required = true, value = "角色类型")
+    })
     public MessageRsp post(BaseGroupType baseGroupType) {
         MessageRsp messageRsp = new MessageRsp();
         messageRsp.setErrormsg(StaticValue.MSGERROR);
         messageRsp.setErrorcode(StaticValue.ERROR);
         //这里拼装basegroupType
-        EntityUtils.setCreatAndUpdatInfo(baseGroupType);
+        EntityUtil.setCreatAndUpdatInfo(baseGroupType);
         //判断参数
         if(StringUtils.isBlank(baseGroupType.gettName())){
             messageRsp.setErrormsg("tName is null ");

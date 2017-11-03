@@ -31,6 +31,6 @@ JacksonHttpMessageConvertersConfiguration/WebMvcAutoConfiguration/静态资源�
 
 2017/10/30：学习使用tk.mybatis.mapper简化mapper
 
-2017/11/2：移除tk.mybatis.mapper不怎么试用 使用generator 开始写权限管理业务 初步完成角色接口
+2017/11/2：移除tk.mybatis.mapper不怎么试用 使用generator 开始写权限管理业务 初步完成角色相关接口：group groupType groupMember
 
-2017/11/3：
+2017/11/3：集成swagger 测试接口 继续写菜单业务相关代码:menu
